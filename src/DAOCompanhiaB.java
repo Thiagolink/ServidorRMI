@@ -1,23 +1,23 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class DAOCompanhiaA {
+public class DAOCompanhiaB {
 	private Map<Integer, String> mapPassagens = new HashMap<Integer, String>();
 	private Map<Integer, Integer> mapCadeiras = new HashMap<Integer, Integer>();
 
-    public DAOCompanhiaA(){
+    public DAOCompanhiaB(){
     	passagens();
     	cadeiras();
     }
     
     public void passagens(){
-    	mapPassagens.put(1, "João Pessoa to Natal 12h");
-    	mapPassagens.put(2, "São Paulo to Maceió 14h");
-    	mapPassagens.put(3, "Manaus to Fortaleza 12h");
-    	mapPassagens.put(4, "Macapá to Salvador 16h");
-    	mapPassagens.put(5, "Goiânia to Fortaleza 12h");
-    	mapPassagens.put(6, "Macapá to Fortaleza to Rio de Janeiro 12h");
-    	mapPassagens.put(7, "Rio de Janeiro to Curitiba to Ferando de Noronha 12h");
+    	mapPassagens.put(1, "Porto de Galinhas to Fortaleza 12h");
+    	mapPassagens.put(2, "Florianópolis to Curitiba 14h");
+    	mapPassagens.put(3, "Fortaleza to Manaus 12h");
+    	mapPassagens.put(4, "Manaus to Salvador 16h");
+    	mapPassagens.put(5, "João Pessoa to Recife 12h");
+    	mapPassagens.put(6, "Rio de Janeiro to Fortaleza to Campinas 12h");
+    	mapPassagens.put(7, "São Paulo to Florianópolis to Parintins 12h");
     }
     public void cadeiras(){
     	mapCadeiras.put(1, 10);
