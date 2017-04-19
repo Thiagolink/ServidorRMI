@@ -1,10 +1,10 @@
-import java.net.MalformedURLException;
-import java.rmi.AlreadyBoundException;
-import java.rmi.Naming;
+package companhia;
 import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
 
-public class CompanhiaAereaD extends UnicastRemoteObject implements Geral {
+import javax.jws.WebService;
+
+@WebService(endpointInterface = "companhia.Geral")
+public class CompanhiaAereaD implements Geral {
 	private String naming = "D";
 	private DAOCompanhiaD daoCompanhiaD = new DAOCompanhiaD();
 	

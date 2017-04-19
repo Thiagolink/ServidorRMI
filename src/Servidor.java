@@ -1,24 +1,25 @@
-import java.net.MalformedURLException;
-import java.rmi.*;
-import java.rmi.server.*;
+import java.rmi.RemoteException;
 
-public class Servidor extends UnicastRemoteObject{
+import javax.xml.ws.Endpoint;
 
-	public Servidor() throws RemoteException{}
+import companhia.CompanhiaAereaA;
+import companhia.CompanhiaAereaB;
+import companhia.CompanhiaAereaC;
+import companhia.CompanhiaAereaD;
 
-	public static void main (String args[]) throws MalformedURLException, AlreadyBoundException {
+public class Servidor{
+
+	public Servidor(){}
+
+	public static void main (String args[]) {
 		try {
-			// 	criando o objeto remoto
-			CompanhiaAereaA obj1 = new CompanhiaAereaA();
-			CompanhiaAereaB obj2 = new CompanhiaAereaB();
-			CompanhiaAereaC obj3 = new CompanhiaAereaC();
-			CompanhiaAereaD obj4 = new CompanhiaAereaD();
 			
-			// registrando esse objeto no serviço de nomes
-			Naming.bind("A", obj1);
-			Naming.bind("B", obj2);
-			Naming.bind("C", obj2);
-			Naming.bind("D", obj2);
+			
+			Endpoint.publish("http://127.0.0.1:8080/A",	new CompanhiaAereaA());
+			Endpoint.publish("http://127.0.0.1:8080/B",	new CompanhiaAereaB());
+			Endpoint.publish("http://127.0.0.1:8080/C",	new CompanhiaAereaC());
+			Endpoint.publish("http://127.0.0.1:8080/D",	new CompanhiaAereaD());
+			// 	criando o objeto remoto
 		} catch (RemoteException e) {
 			System.out.println("Erro: " + e);
 		}
